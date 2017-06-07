@@ -1,24 +1,25 @@
 <html>
     <head>
-        <style>
-            
-        </style>
+        <title>Looping in es6</title>
     </head>
     <body>
         <script>
             //Looping
             const data = ["Talat", "Anil", "Amit", "Sudarshan"];
 
+            // normal forEach
             data.forEach((row,index)=>{
                 console.log(row,index);
                 if(index>2) return;
             }) 
 
+            // for of loop
             for(let name of data) {
                 console.log(name);
                 if(name==="Amit")
                     break;
             }
+
             //loop over object
             const patient = {
                 name:"talat",
@@ -35,8 +36,8 @@
                 console.log(key,patient[key]);
             }
 
-            //ARRAY SOME
-            console.log(data.some((name)=> {name=="Talat"},1));
+            //ARRAY SOME returns true/false if condition pass/fail
+            console.log("Array Some", data.some((name)=> {name=="Talat"},0));
 
         </script>
     </body>
