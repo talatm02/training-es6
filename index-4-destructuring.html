@@ -1,8 +1,6 @@
 <html>
     <head>
-        <style>
-            
-        </style>
+        <title>Destruturing</title>
     </head>
     <body>
         <script>
@@ -15,23 +13,9 @@
                 }
             } 
 
+            //object destructuring
             const {name,gender,age} = patient.demography;
             console.log(name,gender,age);
-
-
-            //can anyone give the example when to use this?
-            const options = {
-                populate : ['name', 'gender'],
-                sort: true
-            }
-
-            searchPatient(options);
-            function searchPatient(options){
-                const {sort, populate} = options;
-
-                console.log(sort,populate);
-                //operation
-            }
 
             //destructuring array
             const patients = [
@@ -44,12 +28,11 @@
             ]
 
             for(const patient of patients){
-                // console.log(patient.split(','))
-                const [ name, gender ] = patient.split(',');
+                const [ name, gender ] = patient.split(','); //array destructuring
                 console.log(name,gender)
             }
 
-            //spreading
+            //spreading example
             {
                 const csv = [
                     "Name,Gender",
@@ -61,11 +44,11 @@
                     "hetal,female",
                 ];
                 
-                const [ columns, ...patients ] = csv;
+                const [ columns, ...patients ] = csv; //first line in columns and second line onwords its array in patients 
                 console.log(columns,patients)
             }
 
-            //swaping of values
+            //swaping of values using destructuring
             let first = "First";
             let second = "Second";
 
