@@ -7,9 +7,9 @@
         <h2 id="heading"></h2>
         <script>
 
+            // adding span tag between each character using spread
             const name = "Talat M";
             const heading = document.getElementById('heading')
-            // heading.innerText = name;
             console.log([...name].map(char=>`<span>${char}</span>`).join(''));
             heading.innerHTML = [...name].map(char=>`<span>${char}</span>`).join('')
 
@@ -43,6 +43,8 @@
             function addAll(...numbers){
                 return numbers.reduce((prev,next) => prev+next,0)
             }
+
+            console.log(addAll([3,2,1]));
 
         </script>
     </body>
