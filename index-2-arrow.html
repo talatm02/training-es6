@@ -1,29 +1,28 @@
 <html>
     <head>
-        <style>
-            .yellow{
-                background-color: yellow;
-            }
-        </style>
+        <title>Arrow functions</title>
     </head>
     <body>
         <div id="block" class="yellow"></div>
 
         <script>
-                //Arrow function
+                //Dummy Array
                 const names = ['Vimal', 'Anil', 'Vaibhav', 'Nikhil'];
+                //Conventional way
                 console.log(names.map(function(name){
                     return name + '1';
                 }));
-
+                //Arrow function
                 console.log(names.map((name)=>{
                     return name + '1';
                 }));
 
+                //Arrow function if single input argument then no need of round braces  ('Parentheses')              
                 console.log(names.map(name=>{
                     return name + '1';
                 }));
 
+                //Arrow function if its single line then no need to write return 
                 console.log(names.map(name=> name + '1'));
 
                 //default functions arguments
