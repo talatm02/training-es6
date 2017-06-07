@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+            .yellow{
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="block" class="yellow"></div>
+
+        <script>
+                //Arrow function
+                const names = ['Vimal', 'Anil', 'Vaibhav', 'Nikhil'];
+                console.log(names.map(function(name){
+                    return name + '1';
+                }));
+
+                console.log(names.map((name)=>{
+                    return name + '1';
+                }));
+
+                console.log(names.map(name=>{
+                    return name + '1';
+                }));
+
+                console.log(names.map(name=> name + '1'));
+
+                //default functions arguments
+                function defaultFuncArg({total,tax=0.13,tip=0.25}={}){
+                    return total + (total*tax) + (total*tip);
+                }
+                console.log(defaultFuncArg());
+        </script>
+    </body>
+
+</html>

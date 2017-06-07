@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style></style>
+        <title>Spread</title>
+    </head>
+    <body>
+        <h2 id="heading"></h2>
+        <script>
+
+            const name = "Talat M";
+            const heading = document.getElementById('heading')
+            // heading.innerText = name;
+            console.log([...name].map(char=>`<span>${char}</span>`).join(''));
+            heading.innerHTML = [...name].map(char=>`<span>${char}</span>`).join('')
+
+            // remove one object from array using spread
+            const arr = [
+                { id:1, name:"talat"},
+                { id:2, name:"anil"},
+                { id:3, name:"vimal"}
+            ]
+
+            const id = 2
+            const removeIndex = arr.findIndex(a=>a.id===id);
+            const newArr1 = [arr.slice(0,removeIndex),arr.slice(removeIndex+1)] // this will not work
+            console.log(newArr1);
+            const newArr = [...arr.slice(0,removeIndex),...arr.slice(removeIndex+1)] // this will work
+            console.log(newArr);
+
+            //merging 2 arrays
+            const arr1 = [1,2,3]
+            const arr2 = [4,5]
+
+            arr1.push(...arr2);
+            console.log(arr1)
+
+            //spread in function
+            const nums = [1,2,3,4]
+
+            console.log(addAll(...nums)); //spread in function
+
+            //rest param
+            function addAll(...numbers){
+                return numbers.reduce((prev,next) => prev+next,0)
+            }
+
+        </script>
+    </body>
+</html>

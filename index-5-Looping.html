@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            //Looping
+            const data = ["Talat", "Anil", "Amit", "Sudarshan"];
+
+            data.forEach((row,index)=>{
+                console.log(row,index);
+                if(index>2) return;
+            }) 
+
+            for(let name of data) {
+                console.log(name);
+                if(name==="Amit")
+                    break;
+            }
+            //loop over object
+            const patient = {
+                name:"talat",
+                age:35,
+                gender:"male"
+            }
+            // one option
+            for(let key of Object.keys(patient)) {
+                console.log(patient[key]);
+            }
+
+            //second option
+            for(let key in patient) {
+                console.log(key,patient[key]);
+            }
+
+            //ARRAY SOME
+            console.log(data.some((name)=> {name=="Talat"},1));
+
+        </script>
+    </body>
+
+</html>

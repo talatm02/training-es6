@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style></style>
+        <title>Promise</title>
+    </head>
+    <body>
+        <script>
+            var promise = fetch('https://jsonplaceholder.typicode.com/posts/1');
+            // console.log(promise)
+            promise
+                .then(data=> data.json())
+                .then(data=>console.log(data))
+                .catch(error=> console.error(error));
+            
+            // Multi Promise
+            function getPatients () {
+                return new Promise((resolve, reject) => {
+                    let promise = fetch('https://jsonplaceholder.typicode.com/posts');
+                    promise
+                        .then(data=> data.json())
+                        .then(data=>resolve(data))
+                        .catch(error=> reject(error));
+                });
+            }
+
+            function getProviders () {               
+                return new Promise((resolve, reject) => {
+                    let promise = fetch('https://jsonplaceholder.typicode.com/posts');
+                    promise
+                        .then(data=> data.json())
+                        .then(data=>resolve(data))
+                        .catch(error=> reject(error));
+                });                
+            }
+
+            Promise.all([getPatients(),getProviders()])
+                .then(responses=>console.log(responses))
+                .catch(err=>console.error(err))
+
+
+
+            //Chain Promise is not required
+
+
+        </script>
+    </body>
+</html>

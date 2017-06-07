@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <style></style>
+        <title>Class</title>
+    </head>
+    <body>
+        <script>
+            class Patient {
+                
+                constructor (provider, partner) {
+                    this.provider = provider;
+                    this.partner = partner;
+                    this.demography = {}
+                    this.demography.address = {};
+                    this.specialNeeds = [];
+                }
+
+                get fullAddress() {
+                    if(!this.demography.address.landmark) return Error("No LandMark");
+                    return "Complete Address";
+                }
+
+                getAllVisit(id){
+                    return ["visit 1", "visit 2", "visit 3"];
+                }
+                
+            }
+
+            const talat = new Patient("2342","2342")
+            console.log(talat); 
+            console.log(typeof Patient);
+
+
+            class Parent {
+                
+                constructor (...args) {
+                    // const {first, second, third} = args;
+                    [this.first, this.second, this.hird] = args;
+                    // console.log(this.first, this.second, third);
+                }
+            }
+
+            const parent = new Parent(1,2,3);
+        </script>
+    </body>
+</html>

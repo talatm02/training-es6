@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <style>
+            .yellow{
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="block" class="yellow"></div>
+
+        <script>
+                console.log(localVar);
+
+                //deadZone for const and let
+                var localVar = "globalVar";
+                const localConst = "globalConst";
+                let localLet = "globalLet";
+            
+                {
+                    const localConst = "localConst";
+                    let localLet = "localLet";
+                    var localVar = "localVar";
+                    
+                    console.log(localConst,localLet, localVar);
+                }
+            
+                // localConst = "localConst" //Can not assign
+                console.log(localConst,localLet,localVar);
+        </script>
+    </body>
+
+</html>
