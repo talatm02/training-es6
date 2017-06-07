@@ -1,10 +1,6 @@
 <html>
     <head>
-        <style>
-            .yellow{
-                background-color: yellow;
-            }
-        </style>
+        <title>Template Tagging</title>
     </head>
     <body>
         <div id="block" class="yellow"></div>
@@ -16,10 +12,9 @@
                 // oldway  
                 console.log('This is my fullname ' + firstname + ' ' + lastname);
 
-                //newway
+                //using template tagging
                 console.log(`This is my fullname ${firstname} ${lastname}`);
-
-               
+      
                 const patients = [
                     {name:"talat", gender:"male"},
                     {name:"anil", gender:"male"},
@@ -28,7 +23,9 @@
                     {name:"burhan", gender:"male"},
                     {name:"hetal", gender:"female"},
                 ]
-                const columns = 'name,gender';
+
+                //We can also call function or ternary operator in template tagging. 
+                //Example give below
                 function csvRows(){
                     // return patients.map(patient => `${patient.name},${patient.gender=='male'? 'M':'F'}`);   // ternary operator
                     return patients.map(patient => `${patient.name},${getGender(patient.gender)}`);  // function calling
@@ -37,16 +34,10 @@
                 function getGender(gender){
                     return gender === 'male' ? 'M':'F';
                 }
-
-                const newPatients = [columns,...csvRows()];
                 
-                console.log(newPatients);
-
                 //new String Methods
-
                 const str = 'Talat Mahmood';
                 console.log(str.startsWith('a',1));
-                
                 console.log(str.endsWith('al',3));
                 
         </script>
